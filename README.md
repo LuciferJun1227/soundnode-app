@@ -6,12 +6,12 @@ Soundnode App
 Soundnode App is an Open-Source project to support Soundcloud for desktop Mac, Windows, and Linux. <br>
 It's built with Electron, Node.js, Angular.js, and uses the Soundcloud API.
 
+> Be aware that Soundnode relies on Soundcloud API which only allows third party apps to play 15 thousand tracks daily. When the rate limit is reached all users are blocked from playing/streaming tracks. The stream will be re-enable one day after (at the same time) streams were blocked.
+
 Follow us on twitter for updates [@Soundnodeapp](https://www.twitter.com/soundnodeapp).
 
-Featured on [Producthunt](https://www.producthunt.com/tech/soundnode-2), [TNW](http://thenextweb.com/apps/2016/01/25/soundnode-is-the-soundcloud-desktop-app-youve-been-waiting-for/#gref) 
+Featured on [Producthunt](https://www.producthunt.com/tech/soundnode-2), [TNW](http://thenextweb.com/apps/2016/01/25/soundnode-is-the-soundcloud-desktop-app-youve-been-waiting-for/#gref)
 and [Gizmodo](http://gizmodo.com/soundnode-turns-soundcloud-into-a-spotify-like-desktop-1754953529)
-
-**Be aware that Soundnode relies on Soundcloud API which only allowing third party apps to play 15 thousand tracks daily. When the rate limit is reached all users aren't able to play any song until the end of the current day the limit was reached.**
 
 ![alt tag](https://raw.githubusercontent.com/Soundnode/soundnode-app/master/Soundnode-app.png)
 
@@ -27,6 +27,17 @@ and [Gizmodo](http://gizmodo.com/soundnode-turns-soundcloud-into-a-spotify-like-
 - Follow/Unfollow users
 
 And much more!
+
+## Configuration
+
+Since soundcloud apply rate limit to third party app you need to configure your own API key to make soundnode work.
+
+Unfortunatly soundcloud suspended new application creation, so to retrieve your api key, you have to dig into soundcloud website.
+
+* Login to soundcloud.com on favorite browser
+* Look for and api call and write down the client_id parameter
+![dev tools](doc/img/dev_tools.png)
+* Edit your userConfig.json file (see here for location : https://github.com/eliecharra/soundnode-app/blob/master/app/public/js/common/configLocation.js#L34) and update clientId parameter with the previously retrieved one.
 
 ## How to contribute
 
